@@ -1,4 +1,4 @@
-# 🧠 Machine Learning & Data Science Projects Portfolio
+# 🧠 Machine Learning & Data Science Projects
 
 
 This repository showcases 9 end-to-end projects, each demonstrating a key concept in applied machine learning and data science. Projects span classification, regression, clustering, active learning, and deep learning with transfer learning.
