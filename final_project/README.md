@@ -1,76 +1,67 @@
-# 🧠 Transfer Learning for Waste Image Classification
+# Transfer Learning for Waste Image Classification
 
-
-This project applies **transfer learning** using pre-trained deep learning models to classify images into **nine types of waste**. The focus is on adapting large-scale image models to smaller datasets via feature extraction and lightweight retraining.
-
----
-
-## 📁 Dataset & Preprocessing
-
-- Images categorized into 9 waste classes
-- Used the **first 80%** of images in each class for training, remaining 20% for test
-- Resized or zero-padded images for consistent input shape
-- Applied **one-hot encoding** for multi-class labels
+This project applies transfer learning using pre-trained deep learning models to classify images into nine types of waste. The focus is on adapting large-scale image models to a smaller domain-specific dataset via feature extraction and lightweight retraining.
 
 ---
 
-## 🔄 Transfer Learning Strategy
+## Live Demo
 
-- Models Used:
-  - `ResNet50`
-  - `ResNet100`
-  - `EfficientNetB0`
-  - `VGG16`
-- Layers below the final fully connected layer were **frozen**
-- Replaced top layers with:
-  - `ReLU` activation
-  - `BatchNormalization`
-  - `Dropout (20%)`
-  - `Softmax` for output
-- Used **ADAM** optimizer and **multinomial cross-entropy loss**
+A Gradio web app is included for interactive inference.
+
+```bash
+cd final_project
+pip install -r requirements.txt
+python demo.py
+```
+
+Upload any waste image and the model returns the top predicted categories with confidence scores.
 
 ---
 
-## 🧪 Regularization & Augmentation
+## Dataset & Preprocessing
 
-- Applied image augmentation via:
-  - Random crop, zoom, rotation, horizontal flip, translation, contrast adjustment
-- Tools used: `OpenCV`, `Keras ImageDataGenerator`
-- Included **L2 regularization** to control overfitting
-
----
-
-## 🧼 Training Procedure
-
-- Batch size: 5 (experimentally optimal)
-- Epochs: 50–100 (with **early stopping** on validation error)
-- Validation Set: Random 20% subset of each class
-- Metrics:
-  - **Precision**
-  - **Recall**
-  - **F1 Score**
-  - **AUC**
-- Plotted **training & validation loss vs. epochs**  
-- Saved model weights at lowest validation error
+- **Dataset**: RealWaste — 9 waste categories, ~4,750 images
+- **Classes**: Cardboard, Food Organics, Glass, Metal, Miscellaneous Trash, Paper, Plastic, Textile Trash, Vegetation
+- 80% of images per class used for training, 20% for test
+- Applied one-hot encoding for multi-class labels
+- Image augmentation: rotation, zoom, horizontal flip, brightness shift, translation
 
 ---
 
-## 📊 Evaluation
+## Transfer Learning Strategy
 
-- Performed evaluation on **training, validation, and test** sets
-- Compared model performance across architectures
-- Identified the best-performing model by average **F1 score & AUC**
-- Discussed overfitting risks and model robustness
+- **Models compared**: ResNet50, ResNet101, EfficientNetB0, VGG16
+- Pre-trained ImageNet weights; all base layers frozen (feature extraction mode)
+- Custom classifier head added on top:
+  - GlobalAveragePooling → BatchNorm → Dense(256, ReLU) + L2 regularization → Dropout(20%) → Softmax(9)
+- Optimizer: Adam (lr=1e-4), loss: categorical cross-entropy
+- Batch size: 5 | Up to 100 epochs with early stopping on val loss
 
 ---
 
-## 🛠️ Tools & Libraries
+## Results (Training History)
+
+| Model | Train Accuracy | Val Accuracy |
+|-------|---------------|--------------|
+| EfficientNetB0 | 87% | 66% |
+| ResNet101 | 84% | 60% |
+| ResNet50 | 82% | 62% |
+| VGG16 | 80% | 60% |
+
+EfficientNetB0 achieved the best validation accuracy. All models show some overfitting — further improvement possible via fine-tuning deeper layers or larger datasets.
+
+---
+
+## Tools & Libraries
 
 - `TensorFlow`, `Keras`
 - `OpenCV`, `NumPy`, `Matplotlib`, `Scikit-learn`
+- `Gradio`, `HuggingFace Transformers` (demo)
 
-## 🔮 Future Work
+---
 
-- Try **fine-tuning more layers** for each model to boost generalization
-- Use **Grad-CAM** to visualize important image regions per class
-- Extend to **object detection** or **segmentation** tasks
+## Future Work
+
+- Fine-tune deeper layers of each model to boost generalization
+- Apply Grad-CAM to visualize which image regions drive predictions
+- Extend to object detection or segmentation tasks

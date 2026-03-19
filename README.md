@@ -1,84 +1,59 @@
-# 🧠 Machine Learning & Data Science Projects
+# Machine Learning & Data Science Projects
 
-
-This repository showcases 9 end-to-end projects, each demonstrating a key concept in applied machine learning and data science. Projects span classification, regression, clustering, active learning, and deep learning with transfer learning.
-
----
-
-## 📁 Project List
-
-### 🟦1: Vertebral Column Classification using KNN
-- **Task**: Classify spinal conditions using K-Nearest Neighbors
-- **Highlights**: Distance metrics, normalization, learning curve analysis
-
-### 🟨2: Energy Output Prediction
-- **Task**: Regression model for predicting energy generated from temperature and exhaust data
-- **Highlights**: Polynomial regression, feature engineering, regularization
-
-### 🟩3: Human Activity Recognition
-- **Task**: Multi-class classification from sensor time series
-- **Highlights**: Preprocessing, dimensionality reduction (PCA), baseline classifiers
-
-### 🟧4: Logistic Regression on Advanced Time Series
-- **Task**: Classify human activities using logistic regression
-- **Highlights**: Feature selection, regularization (L1/L2), ROC/AUC, learning curves
-
-### 🟥5: Interpretable Models & Regularized Regression
-- **Task**: Diagnose acute inflammation from symptoms using interpretable models
-- **Highlights**: Decision trees, ridge/lasso regression, coefficient analysis
-
-### 🟪6: APS Failure Prediction (Imbalanced Data)
-- **Task**: Predict rare failures in Air Pressure Systems (APS)
-- **Highlights**: SMOTE oversampling, tree-based models, class imbalance techniques
-
-### 🟫7: SVM & Clustering on Anuran Calls
-- **Task**: Classify frog species using acoustic features
-- **Highlights**: SVM, K-means, DBSCAN, Silhouette & Davies-Bouldin evaluation
-
-### 🟨8: Supervised, Semi-Supervised, Clustering & Active Learning
-- **Task**: Analyze classification under label scarcity and active querying
-- **Highlights**: L1-SVM, self-training, spectral clustering, active vs passive SVM
+9 end-to-end projects spanning classical ML, ensemble methods, deep learning, and transfer learning — from KNN to fine-tuned CNNs.
 
 ---
 
-## 🧠 Final Project: Waste Classification via Transfer Learning
+## Highlights
 
-- **Task**: Classify 9 types of waste using image data
-- **Techniques**: Transfer Learning with ResNet50, EfficientNetB0, VGG16, etc.
-- **Pipeline**:
-  - Image preprocessing & one-hot encoding
-  - Layer freezing & custom classifier heads
-  - Image augmentation (OpenCV)
-  - Metrics: Precision, Recall, AUC, F1 Score
-- **Models Compared**: ResNet50, ResNet101, VGG16, EfficientNetB0
-- **Tools**: TensorFlow, Keras, OpenCV, Scikit-learn
+### Final Project — Waste Image Classification (Transfer Learning)
+> `final_project/`
 
----
+Classifies 9 types of waste from images using ResNet50, ResNet101, VGG16, and EfficientNetB0. Includes a **live Gradio demo** — run `python demo.py` to try it interactively.
 
-## 🛠️ Tools & Libraries
+- EfficientNetB0 achieved 87% training / 66% validation accuracy
+- Data augmentation pipeline with early stopping and model checkpointing
+- Full train/val/test evaluation with Precision, Recall, F1, AUC
 
-- `Python`, `NumPy`, `Pandas`, `Matplotlib`, `Seaborn`
-- `Scikit-learn`, `XGBoost`, `Imbalanced-learn`
-- `TensorFlow`, `Keras`, `OpenCV`
-- `Jupyter Notebooks`, `Google Colab`
+### Project 6 — APS Failure Prediction
+> `Project_6/`
 
----
+Predicts rare Air Pressure System failures in Scania trucks. Severe class imbalance (1:59 ratio) handled with SMOTE and cost-sensitive learning. 60,000 training samples, 170 features.
 
-## 📈 Topics Covered
+- Models: Random Forest, XGBoost
+- Cost-aware evaluation: false negatives cost 50× more than false positives
+- Feature selection via coefficient of variation
 
-- Supervised Learning (KNN, Logistic, Trees, SVM)
-- Regression (Linear, Polynomial, Ridge, Lasso)
-- Dimensionality Reduction (PCA)
-- Clustering (KMeans, Spectral, DBSCAN)
-- Semi-Supervised & Active Learning
-- Deep Learning & Transfer Learning
-- Model Evaluation (Precision, Recall, AUC, F1)
-- Data Augmentation, Class Imbalance, SMOTE
+### Project 8 — Active & Semi-Supervised Learning
+> `Project_8/`
+
+Compares four learning paradigms — supervised, semi-supervised (self-training), unsupervised (K-Means, Spectral Clustering), and active learning (uncertainty sampling) — on medical and financial datasets.
+
+- Active learning reaches supervised performance with ~50% fewer labels
+- 30 Monte Carlo runs for robust comparison
 
 ---
 
-## 🚀 Author
+## All Projects
 
-**Shravya Shashidhar**  
+| # | Project | Techniques |
+|---|---------|------------|
+| 1 | Vertebral Column Classification | KNN, distance metrics, learning curves |
+| 2 | Energy Output Prediction | Linear/Polynomial/KNN regression, feature engineering |
+| 3 | Human Activity Recognition | Time series feature extraction, Logistic Regression, Naive Bayes |
+| 4 | Logistic Regression on Time Series | L1/L2 regularization, RFE, multiclass ROC/AUC |
+| 5 | Interpretable Models & Regularization | Decision Trees, Ridge, LASSO, PCR, XGBoost |
+| 6 | APS Failure Prediction | Random Forest, XGBoost, SMOTE, cost-sensitive evaluation |
+| 7 | SVM & Clustering on Anuran Calls | Gaussian/Linear SVM, K-Means, Hamming metrics, multi-label |
+| 8 | Active & Semi-Supervised Learning | Self-training, Spectral Clustering, uncertainty sampling |
+| Final | Waste Classification | ResNet50/101, VGG16, EfficientNetB0, Gradio demo |
 
+---
 
+## Stack
+
+`Python` · `scikit-learn` · `XGBoost` · `imbalanced-learn` · `TensorFlow/Keras` · `OpenCV` · `Gradio` · `NumPy` · `Pandas` · `Matplotlib` · `Seaborn`
+
+---
+
+**Shravya Shashidhar**
