@@ -1,0 +1,18 @@
+# Datasets / large files
+Waste_Classification/data/
+**/data/
+
+# Model checkpoints
+*.keras
+*.h5
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
