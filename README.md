@@ -16,7 +16,7 @@ Classifies 9 types of waste from images using ResNet50, ResNet101, VGG16, and Ef
 - Full train/val/test evaluation with Precision, Recall, F1, AUC
 
 ### Project 6 — APS Failure Prediction
-> `Project_6/`
+> `Truck_APS_Failure_Prediction/`
 
 Predicts rare Air Pressure System failures in Scania trucks. Severe class imbalance (1:59 ratio) handled with SMOTE and cost-sensitive learning. 60,000 training samples, 170 features.
 
