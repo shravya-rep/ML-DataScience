@@ -7,7 +7,7 @@
 ## Highlights
 
 ### Final Project — Waste Image Classification (Transfer Learning)
-> `final_project/`
+> `Waste_Classification/`
 
 Classifies 9 types of waste from images using ResNet50, ResNet101, VGG16, and EfficientNetB0. Includes a **live Gradio demo** — run `python demo.py` to try it interactively.
 

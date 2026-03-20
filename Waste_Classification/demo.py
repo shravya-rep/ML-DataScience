@@ -48,7 +48,6 @@ demo = gr.Interface(
         ["data/RealWaste/7-Plastic/Plastic_1.jpg"],
     ],
     flagging_mode="never",
-    theme=gr.themes.Soft(),
 )
 
 if __name__ == "__main__":
