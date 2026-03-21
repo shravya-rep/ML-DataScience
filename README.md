@@ -25,7 +25,7 @@ Predicts rare Air Pressure System failures in Scania trucks. Severe class imbala
 - Feature selection via coefficient of variation
 
 ### Project 8 — Active & Semi-Supervised Learning
-> `Project_8/`
+> `Cancer_and_Fraud_Detection/`
 
 Compares four learning paradigms — supervised, semi-supervised (self-training), unsupervised (K-Means, Spectral Clustering), and active learning (uncertainty sampling) — on medical and financial datasets.
 
