@@ -52,6 +52,8 @@ This asymmetric cost makes standard accuracy a poor evaluation metric.
 
 ## Results
 
+![Model Comparison](results_summary.png)
+
 | Model | FP | FN | Recall | Test Error | Business Cost |
 |-------|----|----|--------|------------|---------------|
 | RF (unweighted) | 20 | 101 | 73.1% | 0.76% | **$50,700** |
